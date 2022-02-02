@@ -1,0 +1,24 @@
+<?php
+$txt['TITLE'] = 'Χρήστες';
+$txt['id'] = 'ID';
+$txt['name'] = 'Όνομα';
+$txt['surname'] = 'Επώνυμο';
+$txt['username'] = 'Όνομα χρήστη';
+$txt['mobile'] = 'Κινητό';
+$txt['email'] = 'E-mail';
+$txt['usergroup'] = 'Ομάδα';
+$txt['last_login'] = 'Τελ. Σύνδεση';
+$txt['new_user'] = 'Δημιουργία χρήστη';
+$txt['name_placeholder'] = 'Εισάγετε το όνομα';
+$txt['surname_placeholder'] = 'Εισάγετε το επώνυμο';
+$txt['select_usergroup'] = 'Επιλέξτε ομάδα';
+$txt['email_placeholder'] = 'Εισάγετε το email';
+$txt['mobile_placeholder'] = 'Εισάγετε το κινητό';
+$txt['password1'] = 'Κωδικός πρόσβασης';
+$txt['password2'] = 'Επανάληψη κωδικού πρόσβασης';
+$txt['password1_placeholder'] = 'Εισάγετε τον κωδικό πρόσβασης';
+$txt['password2_placeholder'] = 'Επαναπληκτρολογήστε τον κωδικό πρόσβασης';
+$txt['username_placeholder'] = 'Εισάγετε το όνομα χρήστη';
+$txt['user_created'] = 'Ο χρήστης καταχωρήθηκε.';
+$txt['username_exists'] = 'Το όνομα χρήστη που εισάγατε υπάρχει ήδη.';
+$txt['passwords_do_not_match'] = 'Οι κωδικοί δεν ταιριάζουν.';

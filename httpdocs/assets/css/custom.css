@@ -1,0 +1,34 @@
+/**
+ *
+ * Apply Here your Custom CSS
+ *
+*/
+
+body {
+	
+}
+
+.modal-content {
+    min-height: auto!important;
+}
+
+.select2-drop, .datepicker.datepicker-dropdown.dropdown-menu {
+    z-index: 99999999!important;
+}
+.form-control {
+    height: 44px;
+}
+select.select2 {
+  display: block!important;
+    visibility: visible!important;
+    position: absolute!important;
+    margin-top: -44px!important;
+    margin-left: 0px!important;
+    width: 190px!important;
+    height: 44px!important;
+    z-index: -1;
+}
+.page-container .sidebar-menu .logo-env {
+	padding-left: 12px;
+	
+}

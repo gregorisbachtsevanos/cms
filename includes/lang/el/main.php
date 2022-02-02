@@ -1,0 +1,26 @@
+<?php
+$txt['HOME'] = 'Αρχική';
+$txt['EMAIL'] = 'Email';
+$txt['CANCEL'] = 'Ακύρωση';
+$txt['CITY'] = 'Πόλη';
+$txt['SAVE'] = 'Αποθήκευση';
+$txt['CANCEL'] = 'Ακύρωση';
+$txt['REMOVE'] = 'Αφαίρεση';
+$txt['CONTACTS'] = 'Ιδιοκτήτες';
+$txt['CUSTOMERS'] = 'Ενοικιαστές';
+$txt['SELECT'] = 'Επιλογή';
+$txt['EDIT_PROFILE'] = 'Επεξεργασία προφίλ';
+$txt['LOGOUT'] = 'Αποσύνδεση';
+$txt['SUCCESS'] = 'Επιτυχία!';
+$txt['ERROR'] = 'Σφάλμα';
+$txt['USERS'] = 'Χρήστες';
+$txt['DELETE'] = 'Διαγραφή';
+$txt['CALENDAR'] = 'Ημερολόγιο';
+$txt['PROPERTIES'] = 'Καταλύματα';
+$txt['BOOKINGS'] = 'Κρατήσεις';
+$txt['VIEW'] = 'Προβολή';
+$txt['VIEW_ALL'] = 'Προβολή όλων';
+$txt['EDIT'] = 'Επεξεργασία';
+$txt['NO_CALENDAR_WARNINGS'] = 'Δεν υπάρχουν εκκρεμότητες στα ραντεβού σας.';
+$txt['NO_TASK_WARNINGS'] = 'Δεν υπάρχουν εκκρεμότητες σε υπενθυμίσεις.';
+$txt['UNFINISHED_TASKS'] = 'Έχετε <strong>{$1}</strong> υπενθυμίσεις σε εκκρεμότητα.';

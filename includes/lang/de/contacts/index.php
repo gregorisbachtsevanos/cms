@@ -1,0 +1,24 @@
+<?php
+$txt['title'] = 'Πελάτες';
+$txt['id'] = 'ID';
+$txt['name'] = 'Όνομα';
+$txt['surname'] = 'Επώνυμο';
+$txt['phone'] = 'Τηλέφωνο';
+$txt['phone_placeholder'] = 'Εισάγετε το τηλέφωνο';
+$txt['mobile'] = 'Κινητό';
+$txt['notes'] = 'Σημειώσεις';
+$txt['notes_placeholder'] = 'Εισάγετε περισσότερες πληροφορίες';
+$txt['email'] = 'E-mail';
+$txt['date_of_birth'] = 'Ημερομηνία Γέννησης';
+$txt['date_of_birth_placeholder'] = 'Εισάγετε ημερομηνία γέννησης';
+$txt['new_contact'] = 'Καταχώρηση πελάτη';
+$txt['date_created'] = 'Ημ/νία Καταχώρησης';
+$txt['address'] = 'Διεύθυνση';
+$txt['address_placeholder'] = 'Εισάγετε τη διεύθυνση';
+$txt['name_placeholder'] = 'Εισάγετε το όνομα';
+$txt['surname_placeholder'] = 'Εισάγετε το επώνυμο';
+$txt['email_placeholder'] = 'Εισάγετε το email';
+$txt['mobile_placeholder'] = 'Εισάγετε το κινητό';
+$txt['contact_created'] = 'Η επαφή καταχωρήθηκε.';
+$txt['contact_deleted'] = 'Η επαφή αφαιρέθηκε.';
+$txt['name_error'] = 'Πρέπει να συμπληρώσετε τουλάχιστον το όνομα ή το επώνυμο του πελάτη.';

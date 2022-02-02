@@ -1,0 +1,21 @@
+<?php
+$txt['info_updated'] = 'Τα στοιχεία σας αποθηκεύτηκαν.';
+$txt['password_changed'] = 'Ο κωδικός σας άλλαξε με επιτυχία.';
+$txt['passwords_do_not_match'] = 'Οι νέοι κωδικοί σας δεν ταιριάζουν.';
+$txt['wrong_password'] = 'Ο υπάρχων κωδικός που εισάγατε είναι λάθος.';
+$txt['personal_info'] = 'Προσωπικά Στοιχεία';
+$txt['change_password'] = 'Αλλαγή Κωδικού Πρόσβασης';
+$txt['name'] = 'Όνομα';
+$txt['surname'] = 'Επώνυμο';
+$txt['mobile'] = 'Κινητό';
+$txt['insert_email'] = 'Εισάγετε το email σας';
+$txt['insert_mobile'] = 'Εισάγετε το κινητό σας';
+$txt['insert_name'] = 'Εισάγετε το όνομά σας';
+$txt['insert_surname'] = 'Εισάγετε το επώνυμό σας';
+$txt['current_password'] = 'Υπάρχων κωδικός';
+$txt['new_password'] = 'Πληκτρολογήστε το νέο σας κωδικό';
+$txt['new_password_repeat'] = 'Επαναπληκτρολογήστε το νέο κωδικό σας';
+$txt['insert_current_password'] = 'Εισάγετε τον τωρινό κωδικό σας.';
+$txt['insert_new_password'] = 'Εισάγετε τον επιθυμητό κωδικό σας.';
+$txt['insert_new_password_repeat'] = 'Επαναπληκτρολογήστε τον επιθυμητό κωδικό σας.';
+$txt['wrong_mobile'] = 'Το κινητό που εισάγατε δεν είναι σωστό.';

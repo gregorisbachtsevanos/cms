@@ -1,0 +1,28 @@
+<?php
+$txt['title'] = 'Μαζική εισαγωγή επαφών';
+$txt['information'] = 'Μπορείτε να εισάγετε μαζικά τις επαφές σας από ένα αρχείο <a href="assets/samples/contacts.xls" target="_blank">.xls</a>, <a href="assets/samples/contacts.xlsx" target="_blank">.xlsx</a> ή <a href="assets/samples/contacts.csv" target="_blank">.csv</a>. Πατήστε στην αντίστοιχη επέκταση για να κατεβάσετε ένα δείγμα. Μπορείτε να βρείτε έναν αναλυτικό οδηγό για την εισαγωγή επαφών στο <a href="{$1}" target="_blank">κέντρο βοήθειας</a>.';
+$txt['select_file'] = 'Επιλέξτε το αρχείο σας';
+$txt['upload'] = 'Ανέβασμα';
+$txt['error'] = 'Σφάλμα';
+$txt['error1'] = '<strong>Σφάλμα! </strong>Δεν επιλέξατε αρχείο προς ανέβασμα.';
+$txt['see_your_contacts'] = 'Δείτε τις επαφές σας';
+$txt['import_more_contacts'] = 'Εισάγετε περισσότερες';
+$txt['contacts_imported'] = '<strong>{$1}</strong> επαφές <strong>καταχωρήθηκαν με επιτυχία</strong>.';
+$txt['success'] = 'Επιτυχία!';
+$txt['back'] = 'Επιστροφή';
+$txt['import'] = 'Εισαγωγή';
+$txt['table_1'] = 'Όνομα';
+$txt['table_2'] = 'Επώνυμο';
+$txt['table_3'] = 'Τηλ. Οικίας';
+$txt['table_4'] = 'Κινητό';
+$txt['table_5'] = 'Τηλ. Εργασίας';
+$txt['table_6'] = 'Πόλη';
+$txt['table_7'] = 'Διεύθυνση';
+$txt['table_8'] = 'Τ.Κ.';
+$txt['table_9'] = 'Ημ/νία';
+$txt['preview'] = 'Προεπισκόπηση δεδομένων';
+$txt['before_process'] = 'Πριν συνεχίσετε, παρακαλούμε ελέγξτε τα δεδομένα σας.';
+$txt['preview_text1'] = 'Παρακάτω θα βρείτε τις {$1} επαφές που θα εισαχθούν.';
+$txt['preview_text2'] = 'Παρακάτω θα βρείτε τις <strong>πρώτες 5</strong> από τις <strong>{$1}</strong> επαφές που θα εισαχθούν.';
+$txt['file_unsupported'] = 'Ο τύπος του αρχείου δεν υποστηρίζεται. Παρακαλούμε ανεβάστε ένα αρχείο XLS, XLSX ή CSV.';
+$txt['file_too_large'] = 'Το μέγεθος του αρχείου δεν πρέπει να ξεπερνάει τα 4MB.';

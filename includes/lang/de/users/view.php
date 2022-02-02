@@ -1,0 +1,27 @@
+<?php
+$txt['TITLE'] = 'Επεξεργασία χρήστη';
+$txt['info_updated'] = 'Τα στοιχεία του χρήστη αποθηκεύτηκαν.';
+$txt['password_changed'] = 'Ο κωδικός του χρήστη άλλαξε με επιτυχία.';
+$txt['passwords_do_not_match'] = 'Οι νέοι κωδικοί σας δεν ταιριάζουν.';
+$txt['user_info'] = 'Στοιχεία Χρήστη';
+$txt['change_password'] = 'Αλλαγή Κωδικού Πρόσβασης';
+$txt['name'] = 'Όνομα';
+$txt['surname'] = 'Επώνυμο';
+$txt['mobile'] = 'Κινητό';
+$txt['email_placeholder'] = 'Εισάγετε το email';
+$txt['mobile_placeholder'] = 'Εισάγετε το κινητό';
+$txt['name_placeholder'] = 'Εισάγετε το όνομα';
+$txt['surname_placeholder'] = 'Εισάγετε το επώνυμο';
+$txt['new_password'] = 'Πληκτρολογήστε το νέο κωδικό';
+$txt['new_password_repeat'] = 'Επαναπληκτρολογήστε το νέο κωδικό';
+$txt['insert_new_password'] = 'Εισάγετε τον επιθυμητό κωδικό';
+$txt['insert_new_password_repeat'] = 'Επαναπληκτρολογήστε τον επιθυμητό κωδικό';
+$txt['wrong_mobile'] = 'Το κινητό που εισάγατε δεν είναι σωστό.';
+$txt['select_usergroup'] = 'Επιλέξτε ομάδα';
+$txt['usergroup'] = 'Ομάδα';
+$txt['username'] = 'Όνομα χρήστη';
+$txt['username_placeholder'] = 'Εισάγετε το όνομα χρήστη';
+$txt['status'] = 'Κατάσταση Λογαριασμού';
+$txt['select_status'] = 'Επιλέξτε την κατάσταση του χρήστη';
+$txt['active'] = 'Ενεργός';
+$txt['inactive'] = 'Ανενεργός';

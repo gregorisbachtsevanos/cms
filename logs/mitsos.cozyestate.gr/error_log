@@ -1,0 +1,1 @@
+[Thu Nov 19 14:29:30.529683 2020] [ssl:warn] [pid 9656:tid 139647743408256] AH01909: RSA certificate configured for mitsos.cozyestate.gr:443 does NOT include an ID which matches the server name

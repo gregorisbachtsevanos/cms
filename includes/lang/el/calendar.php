@@ -1,0 +1,20 @@
+<?php
+$txt['status_0'] = 'Σε αναμονή';
+$txt['status_1'] = 'Ολοκληρώθηκε';
+$txt['status_2'] = 'Ακυρώθηκε';
+$txt['add_calendar'] = 'Προσθήκη ραντεβού';
+$txt['time'] = 'Ώρα';
+$txt['date'] = 'Ημερομηνία';
+$txt['date_placeholder'] = 'Εισάγετε την ημέρα';
+$txt['time_placeholder'] = 'Εισάγετε την ώρα';
+$txt['calendar_added'] = 'Το ραντεβού προστέθηκε.';
+$txt['calendar_saved'] = 'Το ραντεβού αποθηκεύτηκε.';
+$txt['delete_calendar'] = 'Διαγραφή ραντεβού';
+$txt['edit_calendar'] = 'Επεξεργασία ραντεβού';
+$txt['calendar_deleted'] = 'Το ραντεβού αφαιρέθηκε';
+$txt['contact'] = 'Πελάτης';
+$txt['notes'] = 'Σημειώσεις';
+$txt['notes_placeholder'] = 'Εισάγετε σημειώσεις...';
+$txt['status'] = 'Κατάσταση';
+$txt['contact_placeholder'] = 'Επιλέξτε πελάτη';
+$txt['delete_confirm'] = 'Θέλετε να προχωρήσετε στην διαγραφή;';
