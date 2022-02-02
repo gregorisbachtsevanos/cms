@@ -5,7 +5,7 @@ $dbhost = 'localhost'; //Usually localhost
 // #######
 $dbuser = 'root';      //MySQL User
 $dbpass = '';          //User's Password
-$appURL = 'http://localhost/globalcms/';   //baseDomain configuration
+$appURL = 'http://localhost/globalcms/httpdocs/';   //baseDomain configuration
 // #######
 // $dbuser = 'global';      //MySQL User
 // $dbpass = 'NCglo#@!GLO!@#1';          //User's Password
@@ -15,7 +15,7 @@ $dbname = 'global_crm';   //Name of the database
 $appDir = '/';   //baseDomain configuration
 $appName = 'Philoxenia';   //appName configuration
 $appControllers = '../app/controllers/';   //app controllers folder
-$appViews = '../app/views/';   //app views folder
+$appViews = 'app/views/';   //app views folder
 $appLibraries = '../includes/libraries/';   //libraries folder
 $appHelpers = '../includes/libraries/helpers/';   //libraries folder
 $appRequests = '../app/requests/';   //libraries folder

@@ -1,6 +1,4 @@
 <?php
-// die('dash control');
-
 loadLang('dashboard');
 loadLang('calendar');
 if(isset($_POST['editMsg'])){
