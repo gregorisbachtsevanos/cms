@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
+RewriteEngine on
+RewriteBase /globalcms/httpdocs/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

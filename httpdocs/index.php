@@ -1,7 +1,8 @@
 <?php
 define('estatedrive', TRUE);
 require_once('../includes/functions.php');
-$requestUrl = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+require_once('../includes/settings.php');
+$requestUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $requestString = substr($requestUrl, strlen($appURL));
 $urlParams = explode('/', $requestString);
 $requestString = rtrim($requestString, '/');
