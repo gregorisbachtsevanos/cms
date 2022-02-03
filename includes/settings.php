@@ -13,14 +13,14 @@ $appURL = 'http://localhost/globalcms/httpdocs/';   //baseDomain configuration
 // #######
 $dbname = 'global_crm';   //Name of the database
 $appDir = '/globalcms/httpdocs/';   //baseDomain configuration
-$appName = 'Philoxenia';   //appName configuration
+$appName = 'Global CRM';   //appName configuration
 $appControllers = '../app/controllers/';   //app controllers folder
 $appViews = '../app/views/';   //app views folder
 $appLibraries = '../includes/libraries/';   //libraries folder
 $appHelpers = '../includes/libraries/helpers/';   //libraries folder
 $appRequests = '../app/requests/';   //libraries folder
 $appEmail = 'info@laikiapp.gr';   //appEmail configuration
-$appUploads = '../public/uploads/';   //appEmail configuration
+$appUploads = '../httpdocs/uploads/';   //appEmail configuration
 $smsAppKey = 'a5e92b0ca1ef2b';
 $smsProvider = 'https://easysms.gr/api/sms';
 $defaultLang = 'el';

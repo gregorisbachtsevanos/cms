@@ -97,13 +97,15 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 	);
 	foreach($_POST as $key=>$val){
 		if($key != 'fileuploader-list-files' && $key != 'add' && $key != 'files')
-			$data[$key] = $val;
+		$data[$key] = $val;
 	}
 	//print_r($_FILES);
 	//exit();
 	if($newId = $db->insert('properties', $data)){
 		$success = 'Το κατάλυμα προστέθηκε';
 		if(isset($_FILES['files'])){
+			// print_r($data);
+			// die();
 			$photos = array();
 			include($appLibraries.'fileuploader.php');
 			$FileUploader = new FileUploader('files', array(
@@ -112,9 +114,12 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 				'replace' => false
 			));
 			$upload = $FileUploader->upload();
+			// print_r($appUploads);
+			// die();
 			$errors = 0;
 			$success_files = 0;
 			if(isset($upload['warnings']) && Count($upload['warnings']) > 0){
+				print_r(Count($upload['warnings']));
 				foreach($upload['files'] as $file){
 					
 					unlink($appUploads.$file['name']);
@@ -124,6 +129,7 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 					'message'=>$upload['warnings'][0],
 					'title'=>'Σφάλμα'
 				);
+				// echo $response;
 				echo json_encode($response);
 				exit();
 			}
@@ -147,5 +153,26 @@ elseif(isset($_GET['delete']) && $privs->delete_contacts == 1){
 		if($db->delete('properties', array('id'=>$row->id))){
 			$success = 'Το κατάλυμα αφαιρέθηκε';
 		}
+	}
+}
+elseif(isset($_POST['add-transaction'])){
+	
+	if(($_POST['category']) == 0 || empty($_POST['description']) || empty($_POST['amount']) ){
+		echo "empty fields";
+	} else {
+		if($_POST['type'] == 'income'){
+			$type = 0;
+		}else{
+			$type = 1;
+		}
+		$data = array(
+			'type' => $type,
+			'category' => $_POST['category'],
+			'description' => $_POST['description'],
+			'amount' => $_POST['amount'],
+			'payed_amount' => $_POST['payed_amount']
+		);
+		$db -> insert('transaction', $data);
+		// header("Location: ")
 	}
 }

@@ -7,6 +7,14 @@
 		<strong><?php echo $title; ?></strong>
 	</li>
 </ol>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<a data-toggle="modal" data-target="#transaction-modal">
+					<button>Transactions</button>
+				</a>
+			</div>
+		</div>
 					
 		<div class="row">
 			<div class="col-xs-6">
@@ -261,6 +269,81 @@
     </div>
 </div>		
 <?php } ?>
+
+
+<div class="modal fade" id="transaction-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+			<form action="<?php echo $appURL.$controllerName; ?>" method="post" id="transactions-form" enctype="multipart/form-data">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Συναλλαγές</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">	
+								<label class="control-label">Τύπος συναλλαγής *</label>
+								<select name="type" class="form-control" required>
+									<option value="" default>Επιλογή</option>
+									<option value="income">Έσοδα</option>
+									<option value="expenses">Έξοδα</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">	
+								<label class="control-label">Κατηγορία *</label>
+								<select name="category" class="form-control" required>
+									<option value="0" default>Επιλογή</option>
+									<option value="1">Κατηγορία 1</option>
+									<option value="2">Κατηγορία 2</option>
+									<option value="3">Κατηγορία 3</option>
+									<option value="4">Κατηγορία 4</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Περιγραφή </label>
+								<input type="text" class="form-control" name="description" placeholder="Εισάγετε περιγραφή της συναλλαγής">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label">Ποσο *</label>
+								<input type="number" min='0' class="form-control" name="amount" required placeholder="Ποσό συναλλαγής">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label">Ποσο που έχει καλυφθεί </label>
+								<input type="number" min='0' class="form-control" name="payed_amount" placeholder="Ποσο που έχει καλυφθεί">
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<fieldset class="form-fieldset mg-t-30">
+								<legend>Φωτογραφίες</legend>
+								<div class="wd-md-50p mg-l-auto mg-r-auto">
+									<input type="file" class="photos_upload" name="files">
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><?php slang('CANCEL'); ?></button>
+					<button type="submit" name="add-transaction" value="1" class="btn btn-info"><?php slang('SAVE'); ?></button>
+				</div>
+			</form>
+        </div>
+    </div>
+</div>		
 
 <?php
 	endBody(); 

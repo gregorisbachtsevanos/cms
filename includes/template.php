@@ -5,7 +5,9 @@ if(!defined('estatedrive')) {
 function loadHeader($title, $styles1=array(), $styles2='', $sidebar = false){
 	global $appDir;
 	global $appViews;
+	global $appName;
 	global $appURL;
+	global $companyLogo;
 	global $lang;
 	global $user;
 	global $controllerName;
