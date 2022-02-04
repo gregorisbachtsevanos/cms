@@ -90,6 +90,8 @@ function loadScripts($scripts = array()){
 	<script src="assets/js/bootstrap-datepicker.js"></script>
 	<!-- JavaScripts initializations and stuff -->
 	<script src="assets/js/neon-custom.js"></script>
+	<!-- my js -->
+	<script src="../js/app.js"></script>
 	<!-- Demo Settings -->
 	<script src="assets/js/neon-demo.js"></script>';
 	if(isset($success) && $success != ''){

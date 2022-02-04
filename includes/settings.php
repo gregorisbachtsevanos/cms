@@ -1,6 +1,7 @@
 <?php
-if(!defined('estatedrive'))
-	die('Direct access not permitted');
+// if(!defined('estatedrive'))
+// 	die('Direct access not permitted');
+
 $dbhost = 'localhost'; //Usually localhost
 // #######
 $dbuser = 'root';      //MySQL User

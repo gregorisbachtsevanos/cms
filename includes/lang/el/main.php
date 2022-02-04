@@ -4,6 +4,7 @@ $txt['EMAIL'] = 'Email';
 $txt['CANCEL'] = 'Ακύρωση';
 $txt['CITY'] = 'Πόλη';
 $txt['SAVE'] = 'Αποθήκευση';
+$txt['ADD'] = 'Προσθήκη Νέου';
 $txt['CANCEL'] = 'Ακύρωση';
 $txt['REMOVE'] = 'Αφαίρεση';
 $txt['CONTACTS'] = 'Ιδιοκτήτες';

@@ -7,14 +7,14 @@
 		<strong><?php echo $title; ?></strong>
 	</li>
 </ol>
-
-		<div class="row">
+		<!-- transavtion btn  -->
+		<!-- <div class="row">
 			<div class="col-xs-6">
 				<a data-toggle="modal" data-target="#transaction-modal">
 					<button>Transactions</button>
 				</a>
 			</div>
-		</div>
+		</div> -->
 					
 		<div class="row">
 			<div class="col-xs-6">
@@ -270,8 +270,8 @@
 </div>		
 <?php } ?>
 
-
-<div class="modal fade" id="transaction-modal">
+<!-- transaction modal  -->
+<!-- <div class="modal fade" id="transaction-modal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 			<form action="<?php echo $appURL.$controllerName; ?>" method="post" id="transactions-form" enctype="multipart/form-data">
@@ -343,7 +343,7 @@
 			</form>
         </div>
     </div>
-</div>		
+</div> -->
 
 <?php
 	endBody(); 

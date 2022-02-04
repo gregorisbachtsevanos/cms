@@ -80610,7 +80610,8 @@ window.pdfMake = window.pdfMake || {}; window.pdfMake.vfs = {"LICENSE.txt":"DQog
 	 */
 	function _fnLog( settings, level, msg, tn )
 	{
-		msg = 'DataTables warning: '+
+    
+		msg = 'DataTables warnings: '+
 			(settings ? 'table id='+settings.sTableId+' - ' : '')+msg;
 	
 		if ( tn ) {

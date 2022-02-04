@@ -1,7 +1,9 @@
 <?php
-if(!defined('estatedrive')) {
-   die('Direct access not permitted');
-}
+	require_once('../../../includes/settings.php');
+// if(!defined('estatedrive')) {
+//    die('Direct access not permitted');
+// }
+
 if(isset($_GET['load-names'])){
 	if(!isset($_POST['searchTerm']) || $_POST['searchTerm'] == ''){
 		$sql = 'SELECT id, title FROM properties ORDER BY id DESC LIMIT 0,10';
@@ -95,17 +97,16 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 	$data = array(
 		'date_created'=>date('Y-m-d H:i:s', time())
 	);
+	$sql = "SELECT * FROM contacts WHERE id = ?";
+	$params = array($_POST['contact']);
+	$row = $db->row($sql, $params);
 	foreach($_POST as $key=>$val){
 		if($key != 'fileuploader-list-files' && $key != 'add' && $key != 'files')
 		$data[$key] = $val;
 	}
-	//print_r($_FILES);
-	//exit();
 	if($newId = $db->insert('properties', $data)){
 		$success = 'Το κατάλυμα προστέθηκε';
 		if(isset($_FILES['files'])){
-			// print_r($data);
-			// die();
 			$photos = array();
 			include($appLibraries.'fileuploader.php');
 			$FileUploader = new FileUploader('files', array(
@@ -114,12 +115,11 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 				'replace' => false
 			));
 			$upload = $FileUploader->upload();
-			// print_r($appUploads);
 			// die();
 			$errors = 0;
 			$success_files = 0;
 			if(isset($upload['warnings']) && Count($upload['warnings']) > 0){
-				print_r(Count($upload['warnings']));
+				// print_r(Count($upload['warnings']));
 				foreach($upload['files'] as $file){
 					
 					unlink($appUploads.$file['name']);
@@ -129,10 +129,14 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 					'message'=>$upload['warnings'][0],
 					'title'=>'Σφάλμα'
 				);
-				// echo $response;
+				// print_r($response);
 				echo json_encode($response);
 				exit();
 			}
+			// echo $row->name;
+			$data['contact-name'] = $row->id;
+			// print_r($data);die();
+			echo json_encode($data);die();
 			if(count($upload['files']) > 0) {
 				$order = 1;
 				foreach($upload['files'] as $file){
@@ -155,9 +159,8 @@ elseif(isset($_GET['delete']) && $privs->delete_contacts == 1){
 		}
 	}
 }
-elseif(isset($_POST['add-transaction'])){
-	
-	if(($_POST['category']) == 0 || empty($_POST['description']) || empty($_POST['amount']) ){
+elseif(isset($_POST['add-transaction']) || ($_POST['action'] === "add-more-transaction")){
+	if($_POST['type'] == 0 || $_POST['category'] == 0 || empty($_POST['description']) || empty($_POST['amount']) ){
 		echo "empty fields";
 	} else {
 		if($_POST['type'] == 'income'){
@@ -172,7 +175,9 @@ elseif(isset($_POST['add-transaction'])){
 			'amount' => $_POST['amount'],
 			'payed_amount' => $_POST['payed_amount']
 		);
+		// print_r($data);
+		echo 'ok1';
 		$db -> insert('transaction', $data);
-		// header("Location: ")
+		header("Location: ".$appURL);
 	}
 }

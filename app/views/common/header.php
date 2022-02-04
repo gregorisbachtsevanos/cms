@@ -114,12 +114,20 @@ $rows = $db->fetch($sql, $params);
 					</li>
 		
 				</ul>
-		
+				<!-- <div class="col-md-2">
+					<a data-toggle="modal" data-target="#transaction-modal">
+						<button>Transactions</button>
+					</a>
+				</div> -->
 			</div>
 		
-		
+			
+
+					
+			
 			<!-- Raw Links -->
 			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
+				
 				<ul class="user-info pull-right pull-none-xsm">
 
 					<!-- Profile Info -->
@@ -188,10 +196,94 @@ $rows = $db->fetch($sql, $params);
 				</ul>
 		
 			</div>
-		
+
+			<!-- transaction section -->
+			<div class="col-md-2">
+					<a data-toggle="modal" data-target="#transaction-modal">
+						<button>Transactions</button>
+					</a>
+			</div>
+
+			<div class="modal fade" id="transaction-modal">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<form action="<?php echo $appURL; ?>properties" method="post" id="transactions-form" enctype="multipart/form-data">
+						<div id="msg" class="bg-success" style="padding: 2% 20%;opacity:0;position:absolute;left:50%;transform:translate(-50%,0);transition:.5s;border-radius:15px;color:black"></div>
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Συναλλαγές</h4>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">	
+											<label class="control-label">Τύπος συναλλαγής *</label>
+											<select name="type" class="form-control" id="select" required>
+												<option value="0" default>Επιλογή</option>
+												<option value="income">Έσοδα</option>
+												<option value="expenses">Έξοδα</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">	
+											<label class="control-label">Κατηγορία *</label>
+											<select name="category" id="category" class="form-control" value="s"required>
+												<option value="0" default>Επιλογή</option>
+												<option value="1">Κατηγορία 1</option>
+												<option value="2">Κατηγορία 2</option>
+												<option value="3">Κατηγορία 3</option>
+												<option value="4">Κατηγορία 4</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label class="control-label">Περιγραφή *</label>
+											<input type="text" id="description" class="form-control" name="description" required placeholder="Εισάγετε περιγραφή της συναλλαγής">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Ποσο *</label>
+											<input type="number" min='0' class="form-control" id="amount" name="amount" required placeholder="Ποσό συναλλαγής">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Ποσο που έχει καλυφθεί </label>
+											<input type="number" min='0' class="form-control" name="payed_amount" id="payed_amount" placeholder="Ποσο που έχει καλυφθεί">
+										</div>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<fieldset class="form-fieldset mg-t-30">
+											<legend>Φωτογραφίες</legend>
+											<div class="wd-md-50p mg-l-auto mg-r-auto">
+												<input type="file" class="photos_upload" id="file" name="files">
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal"><?php slang('CANCEL'); ?></button>
+								<button type="submit" name="more-transaction" id="more-transaction" value="1" class="btn btn-danger"><?php slang('ADD'); ?> </button>
+								<button type="submit" name="add-transaction" value="1" class="btn btn-info"><?php slang('SAVE'); ?></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>	
+
 		</div>
 		
-		<hr />
+		
+		<hr>
 		
 	
 		
