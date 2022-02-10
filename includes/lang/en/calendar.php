@@ -1,0 +1,20 @@
+<?php
+$txt['status_0'] = 'Waiting';
+$txt['status_1'] = 'Completed';
+$txt['status_2'] = 'Canceled';
+$txt['add_calendar'] = 'Add an appointment';
+$txt['time'] = 'Time';
+$txt['date'] = 'Date';
+$txt['date_placeholder'] = 'Enter the day';
+$txt['time_placeholder'] = 'Enter the time';
+$txt['calendar_added'] = 'The appointment has been added.';
+$txt['calendar_saved'] = 'The appointment has been saved.';
+$txt['delete_calendar'] = 'Deleting an appointment';
+$txt['edit_calendar'] = 'Appointment processing';
+$txt['calendar_deleted'] = 'The appointment was removed';
+$txt['contact'] = 'Customer';
+$txt['notes'] = 'Notes';
+$txt['notes_placeholder'] = 'Enter notes...';
+$txt['status'] = 'Status';
+$txt['contact_placeholder'] = 'Choose a customer';
+$txt['delete_confirm'] = 'Do you want to delete?';

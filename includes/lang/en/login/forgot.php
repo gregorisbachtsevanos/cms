@@ -1,10 +1,10 @@
 <?php
-$txt['TITLE'] = 'Επαναφορά Κωδικού';
-$txt['login_intro'] = 'Για να επαναφέρετε τον κωδικό σας παρακαλούμε συμπληρώστε το όνομα χρήστη σας, το email ή το κινητό σας.';
-$txt['password_changed'] = 'Ο κωδικός σας άλλαξε με επιτυχία. Μπορείτε να συνδεθείτε.';
-$txt['wrong_login'] = 'Ο λογαριασμός δεν βρέθηκε.';
-$txt['wrong_login_text'] = 'Αν αντιμετωπίζετε κάποιο πρόβλημα <a href="{$1}">επικοινωνήστε με την υποστήριξη πελατών</a>.';
-$txt['connecting'] = 'Ελέγχουμε τα στοιχεία σας...';
-$txt['login_field'] = 'Όνομα χρήστη, κινητό ή email';
-$txt['continue'] = 'Συνέχεια';
-$txt['login'] = 'Συνδεθείτε';
+$txt['TITLE'] = 'Reset password';
+$txt['login_intro'] = 'To reset your password please fill in your username, email or mobile phone.';
+$txt['password_changed'] = 'Your password has changed successfully. You can log in.';
+$txt['wrong_login'] = 'Account not found.';
+$txt['wrong_login_text'] = 'If you have a problem <a href="{$1}">contact customer support</a>.';
+$txt['connecting'] = 'We check your data...';
+$txt['login_field'] = 'Username, mobile or email';
+$txt['continue'] = 'Continue';
+$txt['login'] = 'Login';

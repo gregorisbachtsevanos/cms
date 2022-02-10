@@ -1,0 +1,24 @@
+<?php
+$txt['TITLE'] = 'Users';
+$txt['id'] = 'ID';
+$txt['name'] = 'Name';
+$txt['surname'] = 'Last name';
+$txt['username'] = 'User name';
+$txt['mobile'] = 'Phone';
+$txt['email'] = 'E-mail';
+$txt['usergroup'] = 'Group';
+$txt['last_login'] = 'Last Login';
+$txt['new_user'] = 'New User';
+$txt['name_placeholder'] = 'Enter the name';
+$txt['surname_placeholder'] = 'Enter the last name';
+$txt['select_usergroup'] = 'Select group';
+$txt['email_placeholder'] = 'Enter the email';
+$txt['mobile_placeholder'] = 'Enter the phone number';
+$txt['password1'] = 'Password';
+$txt['password2'] = 'Repeat password';
+$txt['password1_placeholder'] = 'Enter the password';
+$txt['password2_placeholder'] = 'Repeat the password';
+$txt['username_placeholder'] = 'Enter the username';
+$txt['user_created'] = 'The user has been registered.';
+$txt['username_exists'] = 'The username you entered already exists.';
+$txt['passwords_do_not_match'] = 'The codes do not match.';

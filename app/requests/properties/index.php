@@ -1,5 +1,4 @@
 <?php
-	require_once('../../../includes/settings.php');
 // if(!defined('estatedrive')) {
 //    die('Direct access not permitted');
 // }
@@ -104,22 +103,23 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 		if($key != 'fileuploader-list-files' && $key != 'add' && $key != 'files')
 		$data[$key] = $val;
 	}
+	print_r($data);die();
 	if($newId = $db->insert('properties', $data)){
 		$success = 'Το κατάλυμα προστέθηκε';
 		if(isset($_FILES['files'])){
 			$photos = array();
 			include($appLibraries.'fileuploader.php');
+			include($appRequests.'properties/ajax-request.php');
+			
 			$FileUploader = new FileUploader('files', array(
 				'uploadDir' => $appUploads,
 				'extensions' => array('image/*'),
 				'replace' => false
 			));
 			$upload = $FileUploader->upload();
-			// die();
 			$errors = 0;
 			$success_files = 0;
 			if(isset($upload['warnings']) && Count($upload['warnings']) > 0){
-				// print_r(Count($upload['warnings']));
 				foreach($upload['files'] as $file){
 					
 					unlink($appUploads.$file['name']);
@@ -136,7 +136,7 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 			// echo $row->name;
 			$data['contact-name'] = $row->id;
 			// print_r($data);die();
-			echo json_encode($data);die();
+			// echo json_encode($data);die();
 			if(count($upload['files']) > 0) {
 				$order = 1;
 				foreach($upload['files'] as $file){
@@ -159,7 +159,7 @@ elseif(isset($_GET['delete']) && $privs->delete_contacts == 1){
 		}
 	}
 }
-elseif(isset($_POST['add-transaction']) || ($_POST['action'] === "add-more-transaction")){
+elseif(isset($_POST['add-transaction'])){
 	if($_POST['type'] == 0 || $_POST['category'] == 0 || empty($_POST['description']) || empty($_POST['amount']) ){
 		echo "empty fields";
 	} else {
@@ -176,7 +176,29 @@ elseif(isset($_POST['add-transaction']) || ($_POST['action'] === "add-more-trans
 			'payed_amount' => $_POST['payed_amount']
 		);
 		// print_r($data);
-		echo 'ok1';
+		$db -> insert('transaction', $data);
+		header("Location: ".$appURL);
+	}
+}
+elseif(isset($_POST['action'])){
+	require_once('../../../includes/settings.php');
+
+	if($_POST['type'] == 0 || $_POST['category'] == 0 || empty($_POST['description']) || empty($_POST['amount']) ){
+		echo "empty fields";
+	} else {
+		if($_POST['type'] == 'income'){
+			$type = 0;
+		}else{
+			$type = 1;
+		}
+		$data = array(
+			'type' => $type,
+			'category' => $_POST['category'],
+			'description' => $_POST['description'],
+			'amount' => $_POST['amount'],
+			'payed_amount' => $_POST['payed_amount']
+		);
+		// print_r($data);
 		$db -> insert('transaction', $data);
 		header("Location: ".$appURL);
 	}

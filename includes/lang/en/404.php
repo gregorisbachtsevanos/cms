@@ -1,4 +1,4 @@
 <?php
-$txt['TITLE'] = 'Η σελίδα δε βρέθηκε';
-$txt['H1'] = 'Η σελίδα που ζητήσατε δεν υπάρχει';
-$txt['GO_BACK'] = 'Επιστροφή στο {$1}';
+$txt['TITLE'] = 'Page not found';
+$txt['H1'] = 'The page you requested does not exist';
+$txt['GO_BACK'] = 'Back to {$1}';

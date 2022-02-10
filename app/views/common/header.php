@@ -208,7 +208,7 @@ $rows = $db->fetch($sql, $params);
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<form action="<?php echo $appURL; ?>properties" method="post" id="transactions-form" enctype="multipart/form-data">
-						<div id="msg" class="bg-success" style="padding: 2% 20%;opacity:0;position:absolute;left:50%;transform:translate(-50%,0);transition:.5s;border-radius:15px;color:black"></div>
+						<div id="msg" style=" width:100%;padding: 2% 20%;opacity:0;text-align:center;position:absolute;transition:.5s;border-radius:3px;color:black"></div>
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 								<h4 class="modal-title">Συναλλαγές</h4>
@@ -272,7 +272,7 @@ $rows = $db->fetch($sql, $params);
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal"><?php slang('CANCEL'); ?></button>
-								<button type="submit" name="more-transaction" id="more-transaction" value="1" class="btn btn-danger"><?php slang('ADD'); ?> </button>
+								<button type="submit" name="add-transaction" id="more-transaction" value="1" class="btn btn-danger"><?php slang('ADD'); ?> </button>
 								<button type="submit" name="add-transaction" value="1" class="btn btn-info"><?php slang('SAVE'); ?></button>
 							</div>
 						</form>

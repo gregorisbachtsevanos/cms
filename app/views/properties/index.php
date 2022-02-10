@@ -70,11 +70,13 @@
 					<h4 class="modal-title">Νέο κατάλυμα</h4>
 				</div>
 				<div class="modal-body">
+					<p class="h6 lead" style="font-size:1.5rem;border-bottom:1px solid #9E9E9E">Βασικές πληροφορίες<br>
+					</p>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Τίτλος</label>
-								<input type="text" class="form-control" name="title" required placeholder="Εισάγετε έναν τίτλο για το κατάλυμα">
+								<input type="text" class="form-control" name="title" id="title" required placeholder="Τίτλος καταλύματος">
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -87,30 +89,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								<label class="control-label">Τύπος</label>
-								<select name="type" class="form-control select2" required>
-									<option value="">Επιλογή</option>
-									<?php echo arrayToSelect(fetchTable('property_types'), 'id', 'name'); ?>
-								</select>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label class="control-label">Όροφος</label>
-								<select name="floor" class="form-control select2" required>
-									<option value="">Επιλογή</option>
-									<?php echo arrayToSelect(fetchTable('property_floors'), 'id', 'name'); ?>
-								</select>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label class="control-label">Εμβαδόν</label>
-								<input type="number" min="0" class="form-control" name="size" required placeholder="Εισάγετε το εμβαδόν του καταλύματος">
-							</div>
-						</div>
+						
 					</div>
 					<div class="row">
 						<div class="col-md-4">
@@ -132,18 +111,19 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label"><?php slang('country'); ?></label>
-								<select name="country" class="form-control select2" data-allow-clear="true" data-placeholder="<?php slang('select_country'); ?>" required>
+								<select name="country" id="country" class="form-control select2" data-allow-clear="true" data-placeholder="<?php slang('select_country'); ?>" required>
 								<option value=""><?php slang('select_country'); ?></option>
 								<?php echo arrayToSelect(fetchTable('countries'), 'code', 'name', null, array('GR')); ?>
 								</select>
 							</div>
 						</div>
 					</div>
+					
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
-								<label class="control-label">Διπλά κρεβάτια</label>
-								<select name="double_beds" class="form-control select2" required>
+								<label class="control-label">Ενήλικες</label>
+								<select name="udults" id="udults" class="form-control select2" required>
 									<option value="">Επιλογή</option>
 									<?php
 									for($i = 0; $i <= 20; $i++)
@@ -154,8 +134,8 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label class="control-label">Μονά κρεβάτια</label>
-								<select name="single_beds" class="form-control select2" required>
+								<label class="control-label">Παιδιά</label>
+								<select name="children" id="children" class="form-control select2" required>
 									<option value="">Επιλογή</option>
 									<?php
 									for($i = 0; $i <= 20; $i++)
@@ -164,24 +144,201 @@
 								</select>
 							</div>
 						</div>
+						
 						<div class="col-md-4">
 							<div class="form-group">
-								<label class="control-label">Ράντζα / Καναπέδες</label>
-								<select name="sofa_beds" class="form-control select2" required>
+								<label class="control-label">Κατοικίδια</label>
+								<select name="pets" id="pets" class="form-control select2" required>
 									<option value="">Επιλογή</option>
-									<?php
-									for($i = 0; $i <= 20; $i++)
-										echo '<option value="'.$i.'">'.$i.'</option>';
-									?>
+									<option value="0">Απαγορεύονται</option>
+									<option value="1">Επιτρέπονται</option>
 								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Τιμή</label>
+								<input type="number" class="form-control" name="price" id="price" required placeholder="Τιμή καταλύματος">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Προηγούμενη Τιμή</label>
+								<input type="number" class="form-control" name="prev_price" id="prev_price" placeholder="Προηγούμενη τιμή του καταλύματος (εάν υπάρχει)">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Αρχική Τιμή</label>
+								<input type="number" class="form-control" name="init_price" id="init_price" placeholder="Αρχική τιμή του καταλύματος">
+							</div>
+						</div>
+					</div>
+					<p class="h6 lead" style="font-size:1.5rem;border-bottom:1px solid #9E9E9E">Μαζική Χρέωση<br>
+						<span class="text-muted" style="font-size:1.1rem">Παροχή έκπτωσης σε διαμονές μεγαλύτερης διάρκειας*</span>
+					</p>
+					<div class="row">
+					<?php 
+						$date = date('d-m-Y');
+						$newDate = date("Y-m-d", strtotime($date));
+					?>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label">Βράδια</label>
+								<input type="number" class="form-control" name="nights" id="nights" placeholder="Επιθυμητά βράδια">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label">Τιμή Ανα Βράδυ</label>
+								<input type="text" class="form-control" name="per_night" id="per_night" placeholder="Τιμή ανα βράδυ">
+							</div>
+						</div>
+					</div>
+					<p class="h6 lead" style="font-size:1.5rem;border-bottom:1px solid #9E9E9E">Εποχιακές τιμές<br>
+						<span class="text-muted" style="font-size:1.1rem">Χρεώσης ανα εποχή*</span>
+					</p>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Check in</label>
+								<input type="date" value="<?php echo $newDate?>" class="form-control" name="date" id="check-out" required>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Check out</label>
+								<input type="date" value="<?php echo $newDate?>" class="form-control" name="date" id="check-out" required>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Τιμή</label>
+								<input type="number" class="form-control" name="season_price" id="season_price" required placeholder="Τελική τιμή">
+							</div>
+						</div>
+					</div>
+					<p class="h6 lead" style="font-size:1.5rem;border-bottom:1px solid #9E9E9E">Επιπλέον χρεώσεις<br>
+						<span class="text-muted" style="font-size:1.1rem">Πρόσθετες χρεώσεις*</span>
+					</p>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Κατηγορία χρέωσης</label>
+								<input type="text" class="form-control" name="fee_label" id="fee_label" placeholder="Προσθήκη κατηγορία χρέωσης">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Ποσό χρέωσης</label>
+								<input type="number" class="form-control" name="fee_amount" id="fee_amount" placeholder="Προσθήκη ποσού χρέωσης">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Τύπος χρέωσεις</label>
+								<select name="fee_type" id="fee_type" class="form-control select2">
+									<option value="">Επιλογή</option>
+									<option value="0">Fixed</option>
+									<option value="1">Percentage</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Υπολογισμός</label>
+								<input type="number" class="form-control" name="cal_price" id="cal_price" placeholder="Τελική τιμή">
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<div class="form-group">
-								<label class="control-label">Ενήλικες</label>
-								<select name="udults" class="form-control select2" required>
+								<label class="control-label">Φ.Π.Α</label>
+								<input type="number" class="form-control" name="taxis" id="taxis" placeholder="Προσθήκη Φ.Π.Α">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Ποσοστό χρέωσης υπηρεσίων</label>
+								<input type="number" class="form-control" name="service_fee" id="service_fee" placeholder="Xρέωση υπηρεσίων">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Χωρητικότητα επισκεπτών</label>
+								<input type="number" class="form-control" name="guests_capacity" id="guests_capacity" placeholder="Προσθήκη Χωρητικότητας">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<p>Επιπλέον Επισκέπτες</p>
+								<input type="radio" name='extra_guests' id="yes" value="Ναι">
+								<label for="yes">Yes</label>
+								<input type="radio" name='extra_guests' id="no" value="Οχι">
+								<label for="no">No</label>
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Χρέωση για κάθε επιπλέον άτομο</label>
+								<input type="number" class="form-control" name="price_per_person" id="price_per_person" placeholder="Προσθήκη χρέωση επιπλέον ατόμου">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Υποχρεωτικός αριθμός ημερών ενοικιασεις</label>
+								<input type="number" class="form-control" name="staying_nights" id="staying_nights" placeholder="Προσθήκη υποχρεωτικού αριθμού ενοικιασεις">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<p>Αντιμετώπιση παιδιού ως ενήλικα</p>
+								<input type="radio" name='clild_as_adult' id="yes" value="Ναι">
+								<label for="yes">Yes</label>
+								<input type="radio" name='clild_as_adult' id="no" value="Οχι">
+								<label for="no">No</label>
+							</div>
+						</div>
+					</div>
+					<p class="h6 lead" style="font-size:1.5rem;border-bottom:1px solid #9E9E9E">Διαμονή<br>
+					<span class="text-muted" style="font-size:1.1rem">Στοιχεία διαμονής για τους επισκέπτες*</span>
+					</p>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Τύπος</label>
+								<select name="type" id="type" class="form-control select2" required>
+									<option value="">Επιλογή</option>
+									<?php echo arrayToSelect(fetchTable('property_types'), 'id', 'name'); ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Όροφος</label>
+								<select name="floor" id="floor" class="form-control select2" required>
+									<option value="">Επιλογή</option>
+									<?php echo arrayToSelect(fetchTable('property_floors'), 'id', 'name'); ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Εμβαδόν</label>
+								<input type="number" id="size" min="0" class="form-control" name="size" required placeholder="Εισάγετε το εμβαδόν του καταλύματος">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Διπλά κρεβάτια</label>
+								<select name="double_beds" id="double_beds" class="form-control select2" required>
 									<option value="">Επιλογή</option>
 									<?php
 									for($i = 0; $i <= 20; $i++)
@@ -192,8 +349,20 @@
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label class="control-label">Παιδιά</label>
-								<select name="children" class="form-control select2" required>
+								<label class="control-label">Μονά κρεβάτια</label>
+								<select name="single_beds" id="single_beds" class="form-control select2" required>
+									<option value="">Επιλογή</option>
+									<?php
+									for($i = 0; $i <= 20; $i++)
+										echo '<option value="'.$i.'">'.$i.'</option>';
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label class="control-label">Ράντζα / Καναπέδες</label>
+								<select name="sofa_beds" id="sofa_beds" class="form-control select2" required>
 									<option value="">Επιλογή</option>
 									<?php
 									for($i = 0; $i <= 20; $i++)
@@ -205,20 +374,10 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label">Κουζίνα</label>
-								<select name="kitchen" class="form-control select2" required>
+								<select name="kitchen" id="kitchen" class="form-control select2" required>
 									<option value="">Επιλογή</option>
 									<option value="0">Όχι</option>
 									<option value="1">Ναι</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="form-group">
-								<label class="control-label">Κατοικίδια</label>
-								<select name="pets" class="form-control select2" required>
-									<option value="">Επιλογή</option>
-									<option value="0">Απαγορεύονται</option>
-									<option value="1">Επιτρέπονται</option>
 								</select>
 							</div>
 						</div>
@@ -254,7 +413,7 @@
 							<fieldset class="form-fieldset mg-t-30">
 								<legend>Φωτογραφίες</legend>
 								<div class="wd-md-50p mg-l-auto mg-r-auto">
-									<input type="file" class="photos_upload" name="files">
+									<input type="file" class="photos_upload" name="files" id="files">
 								</div>
 							</fieldset>
 						</div>
@@ -262,7 +421,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal"><?php slang('CANCEL'); ?></button>
-					<button type="submit" name="add" value="1" class="btn btn-info"><?php slang('SAVE'); ?></button>
+					<button type="submit" name="add" id="add-btn" value="1" class="btn btn-info"><?php slang('SAVE'); ?></button>
 				</div>
 			</form>
         </div>

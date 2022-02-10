@@ -1,0 +1,21 @@
+<?php
+$txt['info_updated'] = 'Your details have been saved.';
+$txt['password_changed'] = 'Your password has changed successfully.';
+$txt['passwords_do_not_match'] = 'Your new passwords do not match.';
+$txt['wrong_password'] = 'The existing password you entered is incorrect.';
+$txt['personal_info'] = 'Personal information';
+$txt['change_password'] = 'Change password';
+$txt['name'] = 'Name';
+$txt['surname'] = 'Last name';
+$txt['mobile'] = 'Mobile';
+$txt['insert_email'] = 'Enter your email';
+$txt['insert_mobile'] = 'Enter your mobile';
+$txt['insert_name'] = 'Enter your name';
+$txt['insert_surname'] = 'Enter your last name';
+$txt['current_password'] = 'Existing code';
+$txt['new_password'] = 'Enter your new password';
+$txt['new_password_repeat'] = 'Repeat your new password';
+$txt['insert_current_password'] = 'Enter your current password.';
+$txt['insert_new_password'] = 'Enter your desired password.';
+$txt['insert_new_password_repeat'] = 'Repeat your desired password.';
+$txt['wrong_mobile'] = 'The cell phone you entered is incorrect.';

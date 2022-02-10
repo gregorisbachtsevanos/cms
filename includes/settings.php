@@ -26,6 +26,7 @@ $smsAppKey = 'a5e92b0ca1ef2b';
 $smsProvider = 'https://easysms.gr/api/sms';
 $defaultLang = 'el';
 $companyLogo = 'global-concept-logo-small.png';
+$companyName = 'Global Concept';
 $companyLogoWidth = '120px'	;
 date_default_timezone_set('Europe/Athens');
 session_start();

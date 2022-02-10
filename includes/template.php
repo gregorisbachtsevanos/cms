@@ -7,6 +7,7 @@ function loadHeader($title, $styles1=array(), $styles2='', $sidebar = false){
 	global $appViews;
 	global $appName;
 	global $appURL;
+	global $companyName;
 	global $companyLogo;
 	global $lang;
 	global $user;
@@ -27,15 +28,12 @@ function loadHeader($title, $styles1=array(), $styles2='', $sidebar = false){
 	<base href="'.$appDir.'">
 	<title>'.$title.'</title>
 
-	<link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/neon-core.css">
-	<link rel="stylesheet" href="assets/css/neon-theme.css">
-	<link rel="stylesheet" href="assets/css/neon-forms.css">
-	<link rel="stylesheet" href="assets/js/select2/dist/css/select2.min.css">
-	<link rel="stylesheet" href="assets/js/select2/select2-bootstrap.css">
+
+	
 	<link rel="stylesheet" href="assets/css/custom.css">
 	';
 	foreach($styles1 as $style)
@@ -52,8 +50,8 @@ function loadHeader($title, $styles1=array(), $styles2='', $sidebar = false){
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
   </head>
@@ -78,16 +76,10 @@ function loadScripts($scripts = array()){
 	global $error;
 	echo '
 	<!-- Bottom scripts (common) -->
-	<script src="assets/js/gsap/TweenMax.min.js"></script>
-	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
-	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/joinable.js"></script>
+
 	<script src="assets/js/resizeable.js"></script>
-	<script src="assets/js/neon-api.js"></script>
-	<script src="assets/js/toastr.js"></script>
-	<script src="assets/js/neon-chat.js"></script>
-	<script src="assets/js/select2/dist/js/select2.min.js"></script>
-	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
 	<!-- JavaScripts initializations and stuff -->
 	<script src="assets/js/neon-custom.js"></script>
 	<!-- my js -->
