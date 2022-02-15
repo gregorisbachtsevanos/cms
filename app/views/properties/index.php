@@ -193,7 +193,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Τιμή Ανα Βράδυ</label>
-								<input type="text" class="form-control" name="per_night" id="per_night" placeholder="Τιμή ανα βράδυ">
+								<input type="text" class="form-control" name="price_per_night" id="price_per_night" placeholder="Τιμή ανα βράδυ">
 							</div>
 						</div>
 					</div>
@@ -204,13 +204,13 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label class="control-label">Check in</label>
-								<input type="date" value="<?php echo $newDate?>" class="form-control" name="date" id="check-out" required>
+								<input type="date" value="<?php echo $newDate?>" class="form-control" name="check_in" id="check_in" required>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label class="control-label">Check out</label>
-								<input type="date" value="<?php echo $newDate?>" class="form-control" name="date" id="check-out" required>
+								<input type="date" value="<?php echo $newDate?>" class="form-control" name="check_out" id="check_out" required>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -238,7 +238,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label class="control-label">Τύπος χρέωσεις</label>
+								<label class="control-label">Τύπος χρέωσης</label>
 								<select name="fee_type" id="fee_type" class="form-control select2">
 									<option value="">Επιλογή</option>
 									<option value="0">Fixed</option>
@@ -286,7 +286,7 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label class="control-label">Χρέωση για κάθε επιπλέον άτομο</label>
-								<input type="number" class="form-control" name="price_per_person" id="price_per_person" placeholder="Προσθήκη χρέωση επιπλέον ατόμου">
+								<input type="number" class="form-control" name="price_per_extra_person" id="price_per_extra_person" placeholder="Προσθήκη χρέωση επιπλέον ατόμου">
 							</div>
 						</div>
 						<div class="col-md-4">

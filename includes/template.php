@@ -55,7 +55,7 @@ function loadHeader($title, $styles1=array(), $styles2='', $sidebar = false){
 	<![endif]-->
 
   </head>
-  <body class="page-body  page-fade" data-url="http://neon.dev">
+  <body class="page-body" data-url="http://neon.dev">
 	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->';    
 	include($appViews.'common/menu.php');
 	include($appViews.'common/header.php');
@@ -75,15 +75,19 @@ function loadScripts($scripts = array()){
 	global $success;
 	global $error;
 	echo '
+	
 	<!-- Bottom scripts (common) -->
-
 	<script src="assets/js/resizeable.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
+
 	<!-- JavaScripts initializations and stuff -->
 	<script src="assets/js/neon-custom.js"></script>
+	<script src="assets/js/neon-api.js"></script>
+
 	<!-- my js -->
 	<script src="../js/app.js"></script>
+
 	<!-- Demo Settings -->
 	<script src="assets/js/neon-demo.js"></script>';
 	if(isset($success) && $success != ''){

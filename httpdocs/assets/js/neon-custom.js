@@ -30,7 +30,7 @@ var public_vars = public_vars || {};
 		$(window).on('error', function(ev)
 		{
 			// Do not let page without showing if JS fails somewhere
-			init_page_transitions();
+			// init_page_transitions();
 		});
 
 		if(public_vars.$pageContainer.hasClass('right-sidebar'))

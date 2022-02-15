@@ -103,7 +103,7 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 		if($key != 'fileuploader-list-files' && $key != 'add' && $key != 'files')
 		$data[$key] = $val;
 	}
-	print_r($data);die();
+	// print_r($data);die();
 	if($newId = $db->insert('properties', $data)){
 		$success = 'Το κατάλυμα προστέθηκε';
 		if(isset($_FILES['files'])){

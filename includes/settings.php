@@ -2,18 +2,19 @@
 // if(!defined('estatedrive'))
 // 	die('Direct access not permitted');
 
-$dbhost = 'localhost'; //Usually localhost
-// #######
-$dbuser = 'root';      //MySQL User
-$dbpass = '';          //User's Password
-$appURL = 'http://localhost/globalcms/httpdocs/';   //baseDomain configuration
-// #######
 // $dbuser = 'global';      //MySQL User
 // $dbpass = 'NCglo#@!GLO!@#1';          //User's Password
 // $appURL = 'https://nostalgic-mcnulty.135-181-182-183.plesk.page/';   //baseDomain configuration
-// #######
+// $dbname = 'global_crm';   //Name of the database
+// $appDir = '/';   //baseDomain configuration
+
+$dbhost = 'localhost'; //Usually localhost
+$dbuser = 'root';      //MySQL User
+$dbpass = '';          //User's Password
+$appURL = 'http://localhost/globalcms/httpdocs/';   //baseDomain configuration
 $dbname = 'global_crm';   //Name of the database
 $appDir = '/globalcms/httpdocs/';   //baseDomain configuration
+// --------------------->
 $appName = 'Global CRM';   //appName configuration
 $appControllers = '../app/controllers/';   //app controllers folder
 $appViews = '../app/views/';   //app views folder

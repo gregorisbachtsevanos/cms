@@ -2,8 +2,7 @@
 
 foreach($_POST as $key=>$val){
 	$data[$key] = $val;
-    print_r($data);
-    die();
+    // print_r($data);die();
 }
 $username = 'global';
 $password = 'WbEL MeTD GCtX c3u5 zWF6 0sNH';
@@ -58,7 +57,7 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 if ($result) {
-    echo "done";
+    $success = "done";
 } else {
-    echo "error";
+    die("Database connection error");
 }

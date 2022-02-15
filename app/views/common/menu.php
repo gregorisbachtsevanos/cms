@@ -8,7 +8,7 @@
 				<div class="logo">
 					<a href="<?php echo $appURL; ?>">
 						<img class="visible-lg visible-md hidden-sm hidden-xs" src="<?php echo 'assets/images/' . $companyLogo; ?>" width="161" alt="<?php echo $appName; ?>" />
-						<img class="visible-xs visible-sm hidden-md hidden-lg" src="assets/images/logo-mobile.png" width="161" alt="<?php echo $appName; ?>" />
+						<img class="visible-xs visible-sm hidden-md hidden-lg" src="<?php echo 'assets/images/' . $companyLogo; ?>" width="100" alt="<?php echo $appName; ?>" />
 					</a>
 				</div>
 
