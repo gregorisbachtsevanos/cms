@@ -218,10 +218,10 @@ $rows = $db->fetch($sql, $params);
 									<div class="col-md-4">
 										<div class="form-group">	
 											<label class="control-label">Επιλέξτε ακίνητο *</label>
-											<select name="type" class="form-control" id="select" required>
+											<select name="property_id" class="form-control" id="property_id" required>
 												<option value="0" default>Επιλογή</option>
 												<?php
-												$sql = "SELECT id, `title`, `address` FROM properties";
+												$sql = "SELECT id, `title`, `address` FROM properties ORDER BY title ASC";
 												$rows = $db->fetch($sql);
 												foreach($rows as $row){
 													echo '<option value="'.$row->id.'">'.$row->title.' - '.$row->address.'</option>';
@@ -269,7 +269,7 @@ $rows = $db->fetch($sql, $params);
 									<div class="col-md-4">
 										<div class="form-group">
 											<label class="control-label">Ποσο που έχει καλυφθεί </label>
-											<input type="number" min='0' class="form-control" name="payed_amount" id="payed_amount" placeholder="Ποσο που έχει καλυφθεί">
+											<input type="number" min='0' class="form-control" name="paid_amount" id="paid_amount" placeholder="Ποσο που έχει καλυφθεί">
 										</div>
 									</div>
 

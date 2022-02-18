@@ -7,14 +7,7 @@
 		<strong><?php echo $title; ?></strong>
 	</li>
 </ol>
-		<!-- transavtion btn  -->
-		<!-- <div class="row">
-			<div class="col-xs-6">
-				<a data-toggle="modal" data-target="#transaction-modal">
-					<button>Transactions</button>
-				</a>
-			</div>
-		</div> -->
+	
 					
 		<div class="row">
 			<div class="col-xs-6">
@@ -479,7 +472,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Ποσο που έχει καλυφθεί </label>
-								<input type="number" min='0' class="form-control" name="payed_amount" placeholder="Ποσο που έχει καλυφθεί">
+								<input type="number" min='0' class="form-control" name="paid_amount" placeholder="Ποσο που έχει καλυφθεί">
 							</div>
 						</div>
 

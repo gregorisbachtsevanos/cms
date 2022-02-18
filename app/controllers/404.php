@@ -1,11 +1,11 @@
-<?php
-if(!defined('estatedrive')) {
-   die('Direct access not permitted');
-}
-loadLang('404');
+<!-- <?php
+// if(!defined('estatedrive')) {
+//    die('Direct access not permitted');
+// }
+// loadLang('404');
 ?><html>
   <head>
-    <title><?php echo lang('TITLE'); ?> | <?php echo $appName; ?></title>
+    <title><?php //echo lang('TITLE'); ?> | <?php //echo $appName; ?></title>
     <meta charset="utf-8"><style>
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
 
@@ -173,5 +173,5 @@ body {
       <span class="circle small"></span>
     </div>
   </section>
-  <div id="title"><a href="<?php echo $appURL; ?>">Επιστροφή στην αρχική</a></div>
- </body>
+  <div id="title"><a href="<?php //echo $appURL; ?>">Επιστροφή στην αρχική</a></div>
+ </body> -->

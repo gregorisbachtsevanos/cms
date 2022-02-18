@@ -84,6 +84,8 @@ elseif(isset($_POST['show-table']) && $privs->view_contacts == 1){
 		array_push($datarow, $types[$row->type]);
 		array_push($datarow, $floors[$row->floor]);
 		array_push($datarow, implode(', ', $beds));
+		// print_r($owner->surname);
+		// die($owner);
 		array_push($datarow, '<a href="contacts/view/'.$owner->id.'">'.$owner->surname.' '.$owner->name.'</a>');
 		array_push($datarow, $row->city);
 		array_push($datarow, $row->address);
@@ -109,7 +111,8 @@ if(isset($_POST['add']) && $privs->add_contacts == 1){
 		if(isset($_FILES['files'])){
 			$photos = array();
 			include($appLibraries.'fileuploader.php');
-			include($appRequests.'properties/ajax-request.php');
+			include($appRequests.'properties/wordpress/create.php');
+			// include($appRequests.'properties/ajax-request.php');
 			
 			$FileUploader = new FileUploader('files', array(
 				'uploadDir' => $appUploads,
@@ -169,13 +172,16 @@ elseif(isset($_POST['add-transaction'])){
 			$type = 1;
 		}
 		$data = array(
+			'property_id' => $_POST["property_id"],
 			'type' => $type,
+			'date' => date("Y-m-d h:i:s"),
 			'category' => $_POST['category'],
 			'description' => $_POST['description'],
 			'amount' => $_POST['amount'],
-			'payed_amount' => $_POST['payed_amount']
+			'paid_amount' => $_POST['paid_amount']
 		);
-		// print_r($data);
+
+		// print_r($data);die();
 		$db -> insert('transaction', $data);
 		header("Location: ".$appURL);
 	}
@@ -196,7 +202,7 @@ elseif(isset($_POST['action'])){
 			'category' => $_POST['category'],
 			'description' => $_POST['description'],
 			'amount' => $_POST['amount'],
-			'payed_amount' => $_POST['payed_amount']
+			'paid_amount' => $_POST['paid_amount']
 		);
 		// print_r($data);
 		$db -> insert('transaction', $data);

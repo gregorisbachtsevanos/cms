@@ -39,6 +39,21 @@
 					<span><?php slang('notes'); ?></span>
 				</a>
 			</li>
+			<li>
+				<a href="#tab6" id='tab6Btn' data-toggle="tab">
+					<span>Έσοδα</span>
+				</a>
+			</li>
+			<li>
+				<a href="#tab7" data-toggle="tab">
+					<span>Έξοδα</span>
+				</a>
+			</li>
+			<li>
+				<a href="#tab8" data-toggle="tab">
+					<span>Σύνολο</span>
+				</a>
+			</li>
 			<?php } ?>
 		</ul>
 		
@@ -398,6 +413,164 @@
 				</div>
 			</div>
 			<?php } ?>
+			<!-- /////////////////// -->
+			<div class="tab-pane" id="tab6">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<h2>Έσοδα</h2>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-bordered datatable" id="table-3">
+								<thead>
+									<tr>
+										<th>Κατηγορία</th>
+										<th>Περιγραφή</th>
+										<th>Ημερομηνια</th>
+										<th>Ποσό</th>
+										<th>Ποσο που έχει καλυφθεί</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$income = 0;
+									$sql = "SELECT * FROM `transaction` WHERE `type` = 0 AND property_id = $property->id";
+									$rows = $db->fetch($sql);
+									if(count($rows) != 0){
+										foreach($rows as $row){
+											
+											$sql = "SELECT * FROM `transaction_category_sources` WHERE id = $row->category";
+											$categoryName = $db->row($sql);
+											
+											$income += $row->amount;
+											echo ' 
+											<tr role="row" class="'.$property->id.'">
+											<td>'.$categoryName->category_name.'</td>
+											<td>'.$row->description.'</td>
+											<td>'.date("d/m/Y",strtotime($row->date)).'</td>
+											<td>'.$row->amount.'</td>
+											<td>'.$row->paid_amount.'</td>
+											</tr>
+											';
+										} 
+									} else {
+										echo '<td>No income data available</td>';
+									}?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>Κατηγορία</th>
+										<th>Περιγραφή</th>
+										<th>Ημερομηνια</th>
+										<th>Ποσό</th>
+										<th>Ποσο που έχει καλυφθεί</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab7">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<h2>Έξοδα</h2>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-bordered datatable" id="table-3">
+								<thead>
+									<tr>
+										<th>Κατηγορία</th>
+										<th>Περιγραφή</th>
+										<th>Ημερομηνια</th>
+										<th>Ποσό</th>
+										<th>Ποσο που έχει καλυφθεί</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									$expenses = 0;
+									$sql = "SELECT * FROM `transaction` WHERE `type` = 1 AND property_id = $property->id";
+									$rows = $db->fetch($sql);
+									if(count($rows) != 0){
+										foreach($rows as $row){
+
+											$sql = "SELECT category_name FROM `transaction_category_sources` WHERE id = $row->category";
+											$categoryName = $db->row($sql);
+											$expenses += $row->amount;
+											echo ' 
+											<tr role="row" class="'.$property->id.'">
+											<td>'.$categoryName->category_name.'</td>
+											<td>'.$row->description.'</td>
+											<td>'.date("d/m/Y",strtotime($row->date)).'</td>
+											<td>'.$row->amount.'</td>
+											<td>'.$row->paid_amount.'</td>
+											</tr>
+											';
+										} 
+									} else {
+										echo '<td>No expenses data available</td>';
+									}?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>Κατηγορία</th>
+										<th>Περιγραφή</th>
+										<th>Ημερομηνια</th>
+										<th>Ποσό</th>
+										<th>Ποσο που έχει καλυφθεί</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab8">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<h2>Σύνολο</h2>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-bordered datatable" id="table-3">
+								<thead>
+									<tr>
+										<th>Έσοδα</th>
+										<th>Έξοδα</th>
+										<th>Σύνολο</th>
+									</tr>
+								</thead>
+								<tbody>									
+									<tr role="row" class="<?php echo $property->id ?>">
+										<td><?php echo $income ?></td>
+										<td><?php echo $expenses ?></td>
+										<td><?php echo $income-$expenses ?></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>Έσοδα</th>
+										<th>Έξοσα</th>
+										<th>Σύνολο</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /////////////////// -->
 			
 		</div>
 		
